@@ -1,0 +1,26 @@
+{
+  "id": "gen-1754861269-i82I5KKOayaIQbe5KYix",
+  "provider": "Google",
+  "model": "google/gemini-2.5-flash-lite",
+  "object": "chat.completion",
+  "created": 1754861269,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The capital of France is **Paris**.",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 7,
+    "completion_tokens": 8,
+    "total_tokens": 15
+  }
+}

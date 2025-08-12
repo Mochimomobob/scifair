@@ -1,0 +1,15 @@
+{
+  "format": "Pick the best answer. Respond only with the letter.",
+  "questions": [
+    {
+      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "choices":{
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon Dioxide",
+        "D": "Argon"
+        },
+      "answer": "B"
+    }
+  ]
+}
