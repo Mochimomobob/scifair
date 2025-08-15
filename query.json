@@ -10,6 +10,16 @@
         "D": "Argon"
         },
       "answer": "B"
+    },
+    {
+      "question": "What is the temperature at which water is most dense?",
+      "choices":{
+        "A": "absolute zero",
+        "B": "0 degrees Celsius",
+        "C": "4 degrees Celsius",
+        "D": "100 degrees Celsius"
+        },
+      "answer": "C"
     }
   ]
 }
