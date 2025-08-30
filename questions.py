@@ -17,6 +17,15 @@ class AskingQuestions:
         prompt = f"{instructions} {question} {choices}"
         return prompt
     
+    def retrieve_answer(self, q_file, i):
+        return q_file["questions"][i]["answer"]
+    
+    # def check_answer(self, q_file, i, response: list):
+    #     correct_answer = q_file["questions"][i]["answer"]
+    #     cleaned_response = response[1]['content']
+    #     if cleaned_response == correct_answer:
+    #         answers_correct += 1
+    #     return answers_correct
 def main():
     api_key = "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"
     api_url = "https://openrouter.ai/api/v1/chat/completions"
