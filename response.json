@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Pick the best answer. Respond only with the letter. What is the temperature at which water is most dense? A: absolute zero, B: 0 degrees Celsius, C: 4 degrees Celsius, D: 100 degrees Celsius"
+  },
+  {
+    "role": "assistant",
+    "content": "analysisThe question: temperature at which water is most dense. The maximum density of water is about 4\u00b0C. So answer C=.assistantfinalC"
+  }
+]
