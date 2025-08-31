@@ -1,5 +1,5 @@
 {
-  "format": "Pick the best answer. Respond only with the letter.",
+  "format": "Pick the best answer. End your response in 'final:<letter>', where <letter> is the letter of the correct answer.",
   "questions": [
     {
       "question": "Which gas is most abundant in Earth's atmosphere?",
