@@ -20,7 +20,7 @@ class CallingModels:
         data = {
             "model": model_name,
             "messages": temp,
-            "max_tokens": 100,
+            "max_tokens": 500,
         }
         response = requests.post(url=self.api_url, headers=self.headers, json=data)
         response_json = response.json()

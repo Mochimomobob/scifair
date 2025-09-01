@@ -11,16 +11,18 @@ def main():
              "Content-Type": "application/json"
          }
     fred = CallingModels(api_key, api_url, headers)
-    models = ['google/gemini-2.5-flash-lite', 'openai/gpt-oss-20b:free']
+    models = ['google/gemini-2.5-flash-lite', 'deepseek/deepseek-chat-v3.1:free']
 
     with open('query.json', 'r') as file:
         data = json.load(file)
+
     aq = AskingQuestions()
     file_length = aq.count_questions(data)
-    results = {model: {"correct": 0, "total": file_length} for model in models}
-    
+    accuracy = {}
+
     for model in models:
         correct_count = 0
+
         for i in range(file_length):
             query = aq.retrieve_query(data, i)
             response = fred.call_model(model_name=model, prompt=query)
@@ -28,19 +30,13 @@ def main():
             answer = aq.retrieve_answer(data, i)
             correct_count += int(aq.check_final_answer(response[-1]['content'], answer))
 
-
             # with open("response.json", "w") as outfile:
             #     json.dump(response, outfile, indent=2)
-            # answer = aq.retrieve_answer(data, i)
-
-            # if response[1]['content'] == answer:
-            #     results[model]["correct"] += 1
-            # else:
-            #     print(f"Question {i+1} for {model} was answered incorrectly.")
+            
             print(f"Response from {model}: {response}")
+        accuracy[model] = correct_count / file_length * 100
 
-    # accuracy = {model: results[model]["correct"] / results[model]["total"] * 100 for model in models}
-    # print(accuracy)
+    print(accuracy)
     
         
 
