@@ -25,10 +25,9 @@ def main():
 
         for i in range(file_length):
             query = aq.retrieve_query(data, i)
-            response = fred.call_model(model_name=model, prompt=query)
+            response = fred.call_model(model_name=model, prompt=query['prompt'])
 
-            answer = aq.retrieve_answer(data, i)
-            correct_count += int(aq.check_final_answer(response[-1]['content'], answer))
+            correct_count += int(aq.check_final_answer(response[-1]['content'], query["answer"]))
 
             # with open("response.json", "w") as outfile:
             #     json.dump(response, outfile, indent=2)

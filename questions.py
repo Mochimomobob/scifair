@@ -13,13 +13,17 @@ class AskingQuestions:
         instructions = q_file["format"]
         question = q_file["questions"][i]["question"]
         choices = q_file["questions"][i]["choices"]
+        answer = q_file["questions"][i]["answer"]
 
         choices = ", ".join([f"{key}: {value}" for key, value in choices.items()])
         prompt = f"{instructions} {question} {choices}"
-        return prompt
+        return {
+        "prompt": prompt,
+        "answer": answer,
+        "raw_question": question,
+        "choices": choices
+        }
     
-    def retrieve_answer(self, q_file, i):
-        return q_file["questions"][i]["answer"]
     
     def check_final_answer(self, response: str, correct_answer: str) -> bool:
     # Use regex to find text after "final:"
